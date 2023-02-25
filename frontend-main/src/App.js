@@ -32,7 +32,7 @@ import Hanakiv from "./pages/artists/Hanakiv";
 // some logic and structure from this tutorial  https://www.youtube.com/watch?v=e-KQq-WnJW4&t=1s
 
 if (process.env.NODE_ENV === 'production'){
-  app.use(express.static(path.join(__dirname, 'frontend/build')));
+  app.use(express.static(path.join(__dirname, 'frontend-main/build')));
 app.get('*',(req,res)=> {res.sendFile(path.resolve(__dirname, 'gondwanarecords-frontend', 'build','index.html'));
 });
 }
