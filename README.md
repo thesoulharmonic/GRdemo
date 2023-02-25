@@ -134,3 +134,5 @@ The website will be deployed on a cloud-based server, such as Amazon Web Service
 ## Release
 
 The website will be released when all the functional and nonfunctional requirements have been met. These include user authentication, store functionality, audio/video embedding and Stripe payment processing. Nonfunctional requirements include responsiveness, security, and scalability. User testing will be conducted to ensure that the website is secure, easy-to-use and payments can me then safely with user data encryption a priority.
+
+
