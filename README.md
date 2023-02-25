@@ -2,13 +2,13 @@
 
 Load each directory and install dependencies
 
-cd GondwanaRecords/backend-main
+cd GRdemo/backend-main
 npm install
 npm start 
 
 then
 
-cd GondwanaRecords/frontend-main
+cd GRdemo
 npm install
 
 In the front-end directory, you can then run:

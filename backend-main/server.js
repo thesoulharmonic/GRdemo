@@ -14,11 +14,11 @@ app.get('*',(req,res)=> {res.sendFile(path.resolve(__dirname, 'gondwanarecords-f
 });
 }
 
-const PORT = process.env.PORT || 3001;
+const PORT = process.env.PORT || 8080;
 app.listen(PORT);
 
 const io = new Server(server, {
-  cors: 'http://localhost:3001',
+  cors: `http://localhost:${PORT}`,
   methods: ['GET', 'POST', 'PATCH', "DELETE"]
 })
 
@@ -57,8 +57,8 @@ app.post('/create-payment', async(req, res)=> {
   }
   })
 
-server.listen(8080, ()=> {
-  console.log('server running at port', 8080)
+server.listen(PORT, ()=> {
+  console.log(`server running at ${PORT}`)
 })
 
 app.set('socketio', io);
