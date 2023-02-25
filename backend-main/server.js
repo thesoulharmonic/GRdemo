@@ -14,13 +14,16 @@ app.get('*',(req,res)=> {res.sendFile(path.resolve(__dirname, 'gondwanarecords-f
 });
 }
 
-const PORT = process.env.PORT || 8080;
+const PORT = process.env.PORT || 3001;
 app.listen(PORT);
 
 const io = new Server(server, {
   cors: `http://localhost:${PORT}`,
   methods: ['GET', 'POST', 'PATCH', "DELETE"]
 })
+
+
+
 
 // import product routes
 
