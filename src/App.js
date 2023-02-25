@@ -31,11 +31,6 @@ import Hanakiv from "./pages/artists/Hanakiv";
 
 // some logic and structure from this tutorial  https://www.youtube.com/watch?v=e-KQq-WnJW4&t=1s
 
-if (process.env.NODE_ENV === 'production'){
-  app.use(express.static(path.join(__dirname, 'frontend-main/build')));
-app.get('*',(req,res)=> {res.sendFile(path.join(__dirname, 'gondwanarecords-frontend', 'public','index.html'));
-});
-}
 
 function App() {
   const user = useSelector((state) => state.user);
