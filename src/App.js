@@ -36,7 +36,7 @@ function App() {
   const user = useSelector((state) => state.user);
   const dispatch = useDispatch();
   useEffect(() => {
-    const socket = io("https://gondwanarecords-frontend.herokuapp.com:8080");
+    const socket = io("https://gondwanarecords-frontend.herokuapp.com");
     socket.off("notification").on("notification", (msgObj, user_id) => {
       // logic for notification
       if (user_id === user._id) {
