@@ -11,13 +11,23 @@ const {Server} = require('socket.io');
 
 
 
-const PORT = process.env.PORT || 3001;
-app.listen(PORT);
+// const PORT = process.env.PORT || 3001;
+// app.listen(PORT);
 
 const io = new Server(server, {
  // cors: `https://gondwanarecords-frontend.herokuapp.com/`,
   methods: ['GET', 'POST', 'PATCH', "DELETE"]
 })
+
+// server.listen(PORT, ()=> {
+//   console.log(`server running at ${PORT}`)
+// })
+
+const PORT = process.env.PORT || 3001;
+app.listen(PORT, () => {
+    console.log(`Our app is running on port ${ PORT }`);
+});
+
 
 
 if (process.env.NODE_ENV === 'production'){
@@ -62,8 +72,6 @@ app.post('/create-payment', async(req, res)=> {
   }
   })
 
-server.listen(PORT, ()=> {
-  console.log(`server running at ${PORT}`)
-})
+
 
 app.set('socketio', io);
