@@ -18,7 +18,7 @@ const PORT = process.env.PORT || 3001;
 app.listen(PORT);
 
 const io = new Server(server, {
-  cors: `http://gondwanarecords-frontend.herokuapp.com`,
+  cors: `http://gondwanarecords-frontend.herokuapp.com/`,
   methods: ['GET', 'POST', 'PATCH', "DELETE"]
 })
 
