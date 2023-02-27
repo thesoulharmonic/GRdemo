@@ -6,7 +6,7 @@
   "scripts": {
     "dev": "nodemon server.js",
     "start": "node server.js",
-    "heroku-postbuild": "NPM_CONFIG_PRODUCTION=false npm install --prefix gondwanarecords-frontend && npm run build --prefix gondwanarecords-frontend"
+    "heroku-postbuild": "NPM_CONFIG_PRODUCTION=false npm install --prefix backend-main && npm run build --prefix backend-main"
   },
   "engines":{
     "node":"19.5.0",
