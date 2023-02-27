@@ -8,11 +8,7 @@ require('./connection')
 const server = http.createServer(app);
 const {Server} = require('socket.io');
 
-if (process.env.NODE_ENV === 'production'){
-  app.use(express.static(path.join(__dirname, 'build')));
-app.get('*',(req,res)=> {res.sendFile(path.resolve(__dirname, 'GondwanaRecords', 'build','index.html'));
-});
-}
+
 
 const PORT = process.env.PORT || 3001;
 app.listen(PORT);
@@ -21,6 +17,14 @@ const io = new Server(server, {
   cors: `http://gondwanarecords-frontend.herokuapp.com/`,
   methods: ['GET', 'POST', 'PATCH', "DELETE"]
 })
+
+
+if (process.env.NODE_ENV === 'production'){
+  app.use(express.static("backend-main/build"));
+app.get('*',(req,res)=> {
+  res.sendFile(path.resolve(__dirname, 'build','index.html'));
+});
+}
 
 // import product routes
 
