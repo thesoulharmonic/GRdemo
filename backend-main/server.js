@@ -22,9 +22,6 @@ const io = new Server(server, {
   methods: ['GET', 'POST', 'PATCH', "DELETE"]
 })
 
-
-
-
 // import product routes
 
 const User = require('./models/User');
