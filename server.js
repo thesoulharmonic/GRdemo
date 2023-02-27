@@ -10,6 +10,24 @@ const server = http.createServer(app);
 const {Server} = require('socket.io');
 
 
+// import product routes
+
+const User = require('./models/User');
+const userRoutes = require('./routes/userRoutes');
+const productRoutes = require('./routes/productRoutes');
+const orderRoutes = require('./routes/orderRoutes');
+const imageRoutes = require('./routes/imageRoutes');
+
+// use packages and rouets
+
+app.use(cors());
+app.use(express.urlencoded({extended: true}));
+app.use(express.json());
+app.use('/users', userRoutes);
+app.use('/products', productRoutes);
+app.use('/orders', orderRoutes);
+app.use('/images', imageRoutes);
+
 
 // const PORT = process.env.PORT || 3001;
 // app.listen(PORT);
@@ -47,23 +65,6 @@ app.listen(PORT, () => {
 // });
 // }
  
-// import product routes
-
-const User = require('./models/User');
-const userRoutes = require('./routes/userRoutes');
-const productRoutes = require('./routes/productRoutes');
-const orderRoutes = require('./routes/orderRoutes');
-const imageRoutes = require('./routes/imageRoutes');
-
-// use packages and rouets
-
-app.use(cors());
-app.use(express.urlencoded({extended: true}));
-app.use(express.json());
-app.use('/users', userRoutes);
-app.use('/products', productRoutes);
-app.use('/orders', orderRoutes);
-app.use('/images', imageRoutes);
 
 
 app.post('/create-payment', async(req, res)=> {
