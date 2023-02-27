@@ -1,6 +1,6 @@
 const router = require("express").Router();
-const Order = require("../models/Order");
-const User = require("../models/User");
+const Order = require("./models/Order");
+const User = require("./models/User");
 
 //creating an order
 

@@ -28,7 +28,7 @@ app.get('*',(req,res)=> {
 
 // import product routes
 
-const User = require('./models/User');
+const User = require('../models/User');
 const userRoutes = require('./routes/userRoutes');
 const productRoutes = require('./routes/productRoutes');
 const orderRoutes = require('./routes/orderRoutes');
