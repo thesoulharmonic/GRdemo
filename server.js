@@ -15,7 +15,7 @@ const {Server} = require('socket.io');
 // app.listen(PORT);
 
 const io = new Server(server, {
-  cors: `https://gondwanarecords-frontend.herokuapp.com/`,
+  cors: `0.0.0.0`,
   methods: ['GET', 'POST', 'PATCH', "DELETE"]
 })
 
