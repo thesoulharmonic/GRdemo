@@ -2,6 +2,7 @@ const express = require('express');
 const cors = require('cors');
 const app = express();
 const http = require('http');
+const path = require('path'); 
 require('dotenv').config();
 const stripe = require('stripe')(process.env.STRIPE_SECRET);
 require('./connection')
@@ -20,15 +21,15 @@ const io = new Server(server, {
 
 
 if (process.env.NODE_ENV === 'production'){
-  app.use(express.static("backend-main/build"));
+  app.use(express.static("client/build"));
 app.get('*',(req,res)=> {
-  res.sendFile(path.resolve(__dirname, 'build','index.html'));
+  res.sendFile(path.resolve(__dirname, 'client', 'build','index.html'));
 });
 }
-
+ 
 // import product routes
 
-const User = require('../models/User');
+const User = require('./models/User');
 const userRoutes = require('./routes/userRoutes');
 const productRoutes = require('./routes/productRoutes');
 const orderRoutes = require('./routes/orderRoutes');

@@ -1,6 +1,6 @@
 const router = require('express').Router();
-const User = require('./models/User');
-const Order = require('./models/Order');
+const User = require('../models/User')
+const Order = require('../models/Order.js');
 // signup
 
 router.post('/signup', async(req, res)=> {
